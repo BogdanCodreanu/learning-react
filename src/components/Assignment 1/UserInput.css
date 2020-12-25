@@ -1,0 +1,11 @@
+.UserInput {
+    margin: 36px 0px;
+    border: 1px  solid #1f2728;
+    box-shadow: 0px 0px 4px 2px #282c34;
+}
+
+.UserInput:hover {
+    margin: 36px 0px;
+    border: 1px solid #8beafc;
+    box-shadow: 0px 0px 4px 2px #7aa1f5;
+}
