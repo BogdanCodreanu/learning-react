@@ -1,63 +1,189 @@
-import React, { useState } from 'react';
+import React, {ChangeEventHandler, FormEventHandler, useState} from 'react';
 import Button from "../../../components/UI/Button/Button";
 import classes from "./ContactData.module.css";
-import { IIngredients } from "../../../components/Burger/Burger";
+import {IIngredients} from "../../../components/Burger/Burger";
 import Spinner from "../../../components/UI/Spinner/Spinner";
-import { RouteComponentProps } from "react-router";
+import {RouteComponentProps} from "react-router";
 import instance from '../../../axios-orders';
+import Input from "../../../components/Input/Input";
 
 interface IContactDataProps extends RouteComponentProps {
     ingredients: IIngredients
     price: number
 }
 
+interface IInputElementType {
+    elementType: string;
+    elementConfig: any;
+    value: string;
+    validation?: {
+        required: boolean
+        valid: boolean
+        touched: boolean
+    }
+}
+
+
+interface IInputString extends IInputElementType {
+    elementType: 'input';
+    elementConfig: {
+        type: string;
+        placeholder: string;
+    }
+}
+
+interface IInputSelectType extends IInputElementType {
+    elementType: 'select';
+    elementConfig: {
+        options: { value: string, displayValue: string }[]
+    }
+}
+
+const TextElement = (placeholder: string): IInputString => {
+    return {
+        elementConfig: {
+            type: 'text',
+            placeholder: placeholder
+        },
+        value: '',
+        elementType: "input",
+        validation: {
+            required: true,
+            valid: false,
+            touched: false
+        }
+    };
+}
+
+interface IOrderForm {
+    name: IInputString;
+    street: IInputString;
+    zipCode: IInputString;
+    country: IInputString;
+    email: IInputString;
+    deliveryMethod: IInputSelectType;
+
+    [key: string]: IInputElementType
+}
+
 const ContactData = (props: IContactDataProps) => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [address, setAddress] = useState(null);
     const [loading, setLoading] = useState<boolean>(false);
+    const [orderForm, setOrderForm] = useState<IOrderForm>({
+        name: TextElement('Name'),
+        street: TextElement('Street'),
+        zipCode: TextElement('Zip Code'),
+        country: TextElement('Country'),
+        email: TextElement('Your email'),
+        deliveryMethod: {
+            elementType: "select",
+            elementConfig: {
+                options: [{value: 'fastest', displayValue: 'Fastest'},
+                    {value: 'cheapest', displayValue: 'Cheapest'}]
+            },
+            value: 'cheapest',
+        }
+    });
+    const [formValid, setFormValid] = useState<boolean>(false);
 
-    const orderHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+
+    const orderHandlerButton = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
+        orderHandler();
+    }
 
+    const orderHandler = () => {
         setLoading(true);
+
+        const formData: { [key: string]: IInputElementType } = {};
+        for (const orderFormKey in orderForm) {
+            formData[orderFormKey] = orderForm[orderFormKey];
+        }
 
         const order = {
             ingredients: props.ingredients,
             price: props.price,
-            customer: {
-                name: 'Max',
-            },
-            deliveryMethod: 'fastest',
+            orderData: formData
         };
-        instance.post('/orders.json', order)
-            .then(response => {
-                console.log('Order sent', response);
-                setLoading(false);
-            })
-            .catch(e => {
-                setLoading(false);
-                throw e;
-            });
+
+        console.log(order);
+
+        // instance.post('/orders.json', order)
+        //     .then(response => {
+        //         console.log('Order sent', response);
+        //         setLoading(false);
+        //     })
+        //     .catch(e => {
+        //         setLoading(false);
+        //         throw e;
+        //     });
+
+        setLoading(false);
     };
 
+    const formElementsArray = [];
+
+    for (const orderFormKey in orderForm) {
+        formElementsArray.push({
+            id: orderFormKey,
+            config: orderForm[orderFormKey]
+        })
+    }
+
+    const checkValidity = (value: string, rules: { required: boolean }) => {
+        let isValid = false;
+
+        if (rules.required) {
+            isValid = value.trim() !== '';
+        }
+
+        return isValid;
+    }
+
+    const inputChangedHandler = (event: any, inputIdentifier: string) => {
+        const updatedForm = {...orderForm};
+        const updatedFormElement = {...updatedForm[inputIdentifier]};
+        updatedFormElement.value = event.target.value;
+        if (updatedFormElement.validation) {
+            updatedFormElement.validation.valid = checkValidity(updatedFormElement.value, updatedFormElement.validation);
+            updatedFormElement.validation.touched = true;
+
+        }
+        updatedForm[inputIdentifier] = updatedFormElement;
+
+        let formIsValid = true;
+        for (const updatedFormKey in updatedForm) {
+            formIsValid = (updatedForm[updatedFormKey].validation?.valid ?? true) && formIsValid;
+        }
+        if (formIsValid !== formValid) {
+            setFormValid(formIsValid);
+        }
+
+        setOrderForm(updatedForm);
+    }
+
     let form = (
-        <form >
-            <input type='text' name='name' placeholder='John Doe' />
-            <input type='email' name='email' placeholder='john.doe@mail.com' />
-            <input type='text' name='street' placeholder='street 4' />
-            <input type='text' name='postal' placeholder='123456' />
-            <Button btnType='Success' clicked={orderHandler} >ORDER</Button >
-        </form >);
-    // if (loading) {
-    //     form = <Spinner />;
-    // }
+        <form onSubmit={orderHandler}>
+            {formElementsArray.map(formElement => (
+                <Input key={formElement.id}
+                       elementType={formElement.config.elementType}
+                       elementConfig={formElement.config.elementConfig}
+                       value={formElement.config.value}
+                       invalid={!(formElement.config.validation?.valid ?? true)}
+                       touched={(formElement.config.validation?.touched ?? false)}
+                       changed={(event) => inputChangedHandler(event, formElement.id)}/>
+            ))}
+            <Button btnType='Success' clicked={orderHandlerButton}
+                disabled={!formValid}>ORDER</Button>
+        </form>);
+    if (loading) {
+        form = <Spinner/>;
+    }
 
     return (
-        <div className={classes.ContactData} >
-            <h4 >Enter your Contact Data</h4 >
+        <div className={classes.ContactData}>
+            <h4>Enter your Contact Data</h4>
             {form}
-        </div >
+        </div>
     );
 };
 

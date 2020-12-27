@@ -42,10 +42,12 @@ class BurgerBuilder extends Component<IBurgerBuilderProps> {
     };
 
     async componentDidMount() {
-        const response = await axios.get(
-            'https://react-burger-learning-9391f-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json');
-        console.log(response);
-        this.setState({ ingredients: response.data });
+        // const response = await axios.get(
+        //     'https://react-burger-learning-9391f-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json');
+        // console.log(response);
+        // this.setState({ ingredients: response.data });
+        this.setState({ingredients: {salad: 0, bacon: 0, cheese: 0, meat: 0}});
+
     }
 
     updatePurchaseState = (ingredients: IIngredients) => {
