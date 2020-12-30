@@ -28,9 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -47,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/routing--assignment-problem" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/React - The Complete Guide (incl Hooks, React Router, Redux)/14. Redux/24.1 redux--01-start/redux--01-start" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -57,7 +57,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="D:\repos\learning-react\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -68,11 +68,11 @@
       <recent name="G:\Repos\learning-react\src\Persons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\repos\learning-react\src\ReduxBasics\containers" />
       <recent name="G:\Repos\learning-react\src\Blog\containers\Blog" />
       <recent name="G:\Repos\learning-react\src\BurgerBuilder\hoc" />
       <recent name="G:\Repos\learning-react\src\BurgerBuilder" />
       <recent name="G:\Repos\learning-react\src\BurgerBuilder\components\Burger\BurgerIngredient" />
-      <recent name="G:\Repos\learning-react\src\BurgerBuilder\containers" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -129,6 +129,11 @@
       <workItem from="1608987129251" duration="7478000" />
       <workItem from="1609069004048" duration="1657000" />
       <workItem from="1609070824777" duration="2660000" />
+      <workItem from="1609078496311" duration="1119000" />
+      <workItem from="1609080621448" duration="72000" />
+      <workItem from="1609080739909" duration="1942000" />
+      <workItem from="1609083123506" duration="627000" />
+      <workItem from="1609158939232" duration="19333000" />
     </task>
     <servers />
   </component>

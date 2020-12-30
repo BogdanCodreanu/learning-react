@@ -2,19 +2,19 @@ import React from 'react';
 import classes from "./BuildControl.module.css";
 
 interface IBuildControlProps {
-    ingredientAdded: () => void
-    ingredientRemoved: () => void
+    ingredientAdded?: () => void
+    ingredientRemoved?: () => void
     label: string;
     disabled: boolean
 }
 
 const BuildControl = (props: IBuildControlProps) => {
     const onClickMoreHandler = () => {
-        props.ingredientAdded();
+        props.ingredientAdded?.();
     };
 
     const onClickRemoveHandler = () => {
-        props.ingredientRemoved();
+        props.ingredientRemoved?.();
     };
 
     return (

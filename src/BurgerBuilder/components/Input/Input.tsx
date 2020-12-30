@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler, EventHandler} from 'react';
+import React, { ChangeEventHandler, EventHandler } from 'react';
 import classes from "./Input.module.css";
 
 interface IInputProps {
@@ -22,36 +22,41 @@ const Input = (props: IInputProps) => {
     switch (props.elementType) {
         case 'input':
             inputElement =
-                <input className={inputClasses.join(' ')} {...(props.elementConfig)} value={props.value}
-                       onChange={props.changed}/>;
+                <input className={inputClasses.join(' ')} {...(props.elementConfig)}
+                       value={props.value}
+                       onChange={props.changed} />;
             break;
         case 'textarea':
             inputElement =
-                <textarea className={inputClasses.join(' ')} {...(props.elementConfig)} value={props.value}
-                          onChange={props.changed}/>;
+                <textarea className={inputClasses.join(' ')} {...(props.elementConfig)}
+                          value={props.value}
+                          onChange={props.changed} />;
             break;
         case 'select':
             inputElement =
                 (
-                    <select className={inputClasses.join(' ')} value={props.value} onChange={props.changed}>
+                    <select className={inputClasses.join(' ')}
+                            value={props.value}
+                            onChange={props.changed} >
                         {props.elementConfig.options.map((option: { value: string, displayValue: string }) => (
-                            <option key={option.value} value={option.value}>
+                            <option key={option.value} value={option.value} >
                                 {option.displayValue}
-                            </option>
+                            </option >
                         ))}
-                    </select>);
+                    </select >);
             break;
         default:
             inputElement =
-                <input className={classes.InputElement} {...(props.elementConfig)} value={props.value}/>;
+                <input className={classes.InputElement} {...(props.elementConfig)}
+                       value={props.value} />;
 
     }
 
     return (
-        <div className={classes.Input}>
-            <label className={classes.Label}>{props.label}</label>
+        <div className={classes.Input} >
+            <label className={classes.Label} >{props.label}</label >
             {inputElement}
-        </div>
+        </div >
     );
 };
 

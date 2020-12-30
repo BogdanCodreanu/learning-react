@@ -8,8 +8,16 @@ export interface IIngredients {
     bacon: number,
     cheese: number,
     meat: number,
+
     [key: string]: number
 }
+
+export const DEFAULT_INGREDIENTS: IIngredients = {
+    salad: 0,
+    meat: 0,
+    cheese: 0,
+    bacon: 0,
+};
 
 interface IBurgerProps {
     ingredients: IIngredients
@@ -19,7 +27,7 @@ const Burger = (props: IBurgerProps) => {
     let transformedIngredients = Object.keys(props.ingredients).map(igKey => {
         return [...Array(props.ingredients[igKey])]
             .map((_, i) => {
-                return <BurgerIngredient key={igKey + i} type={igKey} />
+                return <BurgerIngredient key={igKey + i} type={igKey} />;
             });
     }).reduce((arr, el) => {
         return arr.concat(el);

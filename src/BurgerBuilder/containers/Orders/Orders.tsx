@@ -22,6 +22,7 @@ class Orders extends Component {
 
         try {
             const ordersData = await instance.get<IOrder[]>('/orders.json');
+            console.log(ordersData);
             const fetchedOrders = [];
             for (let dataKey in ordersData.data) {
                 fetchedOrders.push({
@@ -33,6 +34,8 @@ class Orders extends Component {
                 loading: false,
                 orders: fetchedOrders,
             });
+        } catch (e) {
+            console.log('fetching orders failed', e);
         } finally {
             this.setState({ loading: false });
         }

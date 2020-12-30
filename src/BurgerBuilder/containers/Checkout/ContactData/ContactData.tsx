@@ -1,15 +1,17 @@
-import React, {ChangeEventHandler, FormEventHandler, useState} from 'react';
+import React, { ChangeEventHandler, FormEventHandler, useState } from 'react';
 import Button from "../../../components/UI/Button/Button";
-import classes from "./ContactData.module.css";
-import {IIngredients} from "../../../components/Burger/Burger";
+import classes from './ContactData.module.css';
+import { IIngredients } from "../../../components/Burger/Burger";
 import Spinner from "../../../components/UI/Spinner/Spinner";
-import {RouteComponentProps} from "react-router";
+import { RouteComponentProps } from "react-router";
 import instance from '../../../axios-orders';
 import Input from "../../../components/Input/Input";
+import { IBurgerIngredientsState } from "../../../store/burgerIngredientsReducer";
+import { connect } from "react-redux";
 
 interface IContactDataProps extends RouteComponentProps {
-    ingredients: IIngredients
-    price: number
+    ingredients?: IIngredients
+    price?: number
 }
 
 interface IInputElementType {
@@ -43,17 +45,17 @@ const TextElement = (placeholder: string): IInputString => {
     return {
         elementConfig: {
             type: 'text',
-            placeholder: placeholder
+            placeholder: placeholder,
         },
         value: '',
         elementType: "input",
         validation: {
             required: true,
             valid: false,
-            touched: false
-        }
+            touched: false,
+        },
     };
-}
+};
 
 interface IOrderForm {
     name: IInputString;
@@ -77,11 +79,19 @@ const ContactData = (props: IContactDataProps) => {
         deliveryMethod: {
             elementType: "select",
             elementConfig: {
-                options: [{value: 'fastest', displayValue: 'Fastest'},
-                    {value: 'cheapest', displayValue: 'Cheapest'}]
+                options: [
+                    {
+                        value: 'fastest',
+                        displayValue: 'Fastest',
+                    },
+                    {
+                        value: 'cheapest',
+                        displayValue: 'Cheapest',
+                    },
+                ],
             },
             value: 'cheapest',
-        }
+        },
     });
     const [formValid, setFormValid] = useState<boolean>(false);
 
@@ -89,7 +99,7 @@ const ContactData = (props: IContactDataProps) => {
     const orderHandlerButton = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         orderHandler();
-    }
+    };
 
     const orderHandler = () => {
         setLoading(true);
@@ -102,11 +112,13 @@ const ContactData = (props: IContactDataProps) => {
         const order = {
             ingredients: props.ingredients,
             price: props.price,
-            orderData: formData
+            orderData: formData,
         };
 
         console.log(order);
-
+        new Promise(resolve => setTimeout(resolve, 500)).then(res => {
+            setLoading(false);
+        });
         // instance.post('/orders.json', order)
         //     .then(response => {
         //         console.log('Order sent', response);
@@ -117,7 +129,6 @@ const ContactData = (props: IContactDataProps) => {
         //         throw e;
         //     });
 
-        setLoading(false);
     };
 
     const formElementsArray = [];
@@ -125,8 +136,8 @@ const ContactData = (props: IContactDataProps) => {
     for (const orderFormKey in orderForm) {
         formElementsArray.push({
             id: orderFormKey,
-            config: orderForm[orderFormKey]
-        })
+            config: orderForm[orderFormKey],
+        });
     }
 
     const checkValidity = (value: string, rules: { required: boolean }) => {
@@ -137,14 +148,15 @@ const ContactData = (props: IContactDataProps) => {
         }
 
         return isValid;
-    }
+    };
 
     const inputChangedHandler = (event: any, inputIdentifier: string) => {
-        const updatedForm = {...orderForm};
-        const updatedFormElement = {...updatedForm[inputIdentifier]};
+        const updatedForm = { ...orderForm };
+        const updatedFormElement = { ...updatedForm[inputIdentifier] };
         updatedFormElement.value = event.target.value;
         if (updatedFormElement.validation) {
-            updatedFormElement.validation.valid = checkValidity(updatedFormElement.value, updatedFormElement.validation);
+            updatedFormElement.validation.valid =
+                checkValidity(updatedFormElement.value, updatedFormElement.validation);
             updatedFormElement.validation.touched = true;
 
         }
@@ -152,17 +164,18 @@ const ContactData = (props: IContactDataProps) => {
 
         let formIsValid = true;
         for (const updatedFormKey in updatedForm) {
-            formIsValid = (updatedForm[updatedFormKey].validation?.valid ?? true) && formIsValid;
+            formIsValid =
+                (updatedForm[updatedFormKey].validation?.valid ?? true) && formIsValid;
         }
         if (formIsValid !== formValid) {
             setFormValid(formIsValid);
         }
 
         setOrderForm(updatedForm);
-    }
+    };
 
     let form = (
-        <form onSubmit={orderHandler}>
+        <form onSubmit={orderHandler} >
             {formElementsArray.map(formElement => (
                 <Input key={formElement.id}
                        elementType={formElement.config.elementType}
@@ -170,21 +183,28 @@ const ContactData = (props: IContactDataProps) => {
                        value={formElement.config.value}
                        invalid={!(formElement.config.validation?.valid ?? true)}
                        touched={(formElement.config.validation?.touched ?? false)}
-                       changed={(event) => inputChangedHandler(event, formElement.id)}/>
+                       changed={(event) => inputChangedHandler(event, formElement.id)} />
             ))}
             <Button btnType='Success' clicked={orderHandlerButton}
-                disabled={!formValid}>ORDER</Button>
-        </form>);
+                    disabled={!formValid} >ORDER</Button >
+        </form >);
     if (loading) {
-        form = <Spinner/>;
+        form = <Spinner />;
     }
 
     return (
-        <div className={classes.ContactData}>
-            <h4>Enter your Contact Data</h4>
+        <div className={classes.ContactData} >
+            <h4 >Enter your Contact Data</h4 >
             {form}
-        </div>
+        </div >
     );
 };
 
-export default ContactData;
+const mapStateToProps = (state: IBurgerIngredientsState) => {
+    return {
+        ingredients: state.ingredients,
+        price: state.totalPrice,
+    };
+};
+
+export default connect(mapStateToProps)(ContactData);
