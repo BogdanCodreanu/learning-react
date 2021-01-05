@@ -1,14 +1,13 @@
 import React from 'react';
-import './App.css';
 import BurgerApp from "../BurgerBuilder/containers/BurgerApp";
-import Persons from "../ReduxBasics/containers/Persons";
+import './App.css';
 
 function App() {
     return (
         <div >
             {/*<Blog />*/}
-            {/*<BurgerApp />*/}
-            <Persons />
+            <BurgerApp />
+            {/*<Persons />*/}
         </div >
     );
 }

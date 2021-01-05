@@ -1,17 +1,17 @@
-import React, { ChangeEventHandler, FormEventHandler, useState } from 'react';
-import Button from "../../../components/UI/Button/Button";
-import classes from './ContactData.module.css';
-import { IIngredients } from "../../../components/Burger/Burger";
-import Spinner from "../../../components/UI/Spinner/Spinner";
+import React, { useState } from 'react';
+import { connect } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import instance from '../../../axios-orders';
+import { IIngredients } from "../../../components/Burger/Burger";
 import Input from "../../../components/Input/Input";
-import { IBurgerIngredientsState } from "../../../store/burgerIngredientsReducer";
-import { connect } from "react-redux";
+import Button from "../../../components/UI/Button/Button";
+import Spinner from "../../../components/UI/Spinner/Spinner";
+import { IBurgerIngredientsState } from "../../../store/reducers/burgerBuilder";
+import classes from './ContactData.module.css';
 
 interface IContactDataProps extends RouteComponentProps {
-    ingredients?: IIngredients
-    price?: number
+    ingredients: IIngredients | null
+    price: number | null
 }
 
 interface IInputElementType {
@@ -116,18 +116,18 @@ const ContactData = (props: IContactDataProps) => {
         };
 
         console.log(order);
-        new Promise(resolve => setTimeout(resolve, 500)).then(res => {
-            setLoading(false);
-        });
-        // instance.post('/orders.json', order)
-        //     .then(response => {
-        //         console.log('Order sent', response);
-        //         setLoading(false);
-        //     })
-        //     .catch(e => {
-        //         setLoading(false);
-        //         throw e;
-        //     });
+        // new Promise(resolve => setTimeout(resolve, 500)).then(res => {
+        //     setLoading(false);
+        // });
+        instance.post('/orders.json', order)
+            .then(response => {
+                console.log('Order sent', response);
+                setLoading(false);
+            })
+            .catch(e => {
+                setLoading(false);
+                throw e;
+            });
 
     };
 

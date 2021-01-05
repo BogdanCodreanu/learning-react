@@ -1,5 +1,6 @@
 export interface IPersonsAction {
     type: string
+
     [key: string]: any
 }
 

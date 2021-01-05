@@ -1,14 +1,13 @@
-import React, { Component, useEffect, useState } from 'react';
-import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
+import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { Route, RouteComponentProps } from "react-router";
 import { DEFAULT_INGREDIENTS, IIngredients } from "../../components/Burger/Burger";
+import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
+import { IBurgerIngredientsState } from "../../store/reducers/burgerBuilder";
 import ContactData from "./ContactData/ContactData";
-import { IBurgerIngredientsState } from "../../store/burgerIngredientsReducer";
-import { connect } from "react-redux";
 
 interface ICheckoutProps extends RouteComponentProps {
-    ingredients?: IIngredients
-    price?: number
+    ingredients: IIngredients | null
 }
 
 class Checkout extends Component<ICheckoutProps> {

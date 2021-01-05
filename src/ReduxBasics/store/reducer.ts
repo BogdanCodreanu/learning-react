@@ -1,4 +1,4 @@
-import { ADD_PERSON, REMOVE_PERSON } from "./actions";
+import { ADD_PERSON, REMOVE_PERSON } from "./actions/actions";
 import { IPerson, IPersonsAction } from "./type";
 
 export interface IPersonsState {

@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import classes from "./Layout.module.css";
-import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
-import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 import { BrowserRouter } from "react-router-dom";
-
-interface ILayoutProps {
-    children: JSX.Element[] | JSX.Element
-}
+import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
+import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
+import classes from "./Layout.module.css";
 
 interface ILayoutState {
     showSideDrawer: boolean
@@ -38,6 +34,6 @@ class Layout extends Component {
             </BrowserRouter >
         );
     }
-};
+}
 
 export default Layout;

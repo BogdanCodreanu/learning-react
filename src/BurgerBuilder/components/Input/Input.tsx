@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, EventHandler } from 'react';
+import React, { ChangeEventHandler } from 'react';
 import classes from "./Input.module.css";
 
 interface IInputProps {
@@ -12,7 +12,7 @@ interface IInputProps {
 }
 
 const Input = (props: IInputProps) => {
-    let inputElement = null;
+    let inputElement;
     const inputClasses: string[] = [classes.InputElement];
 
     if (props.invalid && props.touched) {

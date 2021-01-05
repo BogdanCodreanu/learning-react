@@ -1,12 +1,6 @@
 import React from 'react';
 import classes from "./BuildControls.module.css";
 import BuildControl from "./BuildControl/BuildControl";
-import {
-    IBurgerIngredientsState,
-    IDispatchType,
-} from "../../../store/burgerIngredientsReducer";
-import { ADD_INGREDIENT } from "../../../store/actions";
-import { connect } from "react-redux";
 
 const controls = [
     {

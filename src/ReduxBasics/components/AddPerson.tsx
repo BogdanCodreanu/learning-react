@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { IPersonDispatchType } from "../store/type";
-import { ADD_PERSON } from "../store/actions";
 import { connect } from "react-redux";
+import { addPerson } from "../store/actions/actions";
+import { IPersonDispatchType } from "../store/type";
 
 interface IAddPersonProps {
     onClick: any
@@ -34,7 +34,7 @@ class AddPerson extends Component<IAddPersonProps> {
 
 const mapDispatchToProps = (dispatch: IPersonDispatchType) => {
     return {
-        onAddedPerson: (name: string) => dispatch({ type: ADD_PERSON, name: name }),
+        onAddedPerson: (name: string) => dispatch(addPerson(name)),
     };
 };
 

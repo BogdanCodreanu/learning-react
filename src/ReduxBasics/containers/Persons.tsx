@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Person from "../components/Person";
+import { connect } from "react-redux";
+import { ThunkDispatch } from 'redux-thunk';
 import AddPerson from "../components/AddPerson";
-import { connect, createStoreHook, Provider } from "react-redux";
+import Person from "../components/Person";
+import { removePerson } from "../store/actions/actions";
 import { IPersonsState } from "../store/reducer";
-import { ADD_PERSON, REMOVE_PERSON } from "../store/actions";
-import { IPersonDispatchType, IPerson } from "../store/type";
+import { IPerson, IPersonsAction } from "../store/type";
 
 interface IPersonsProps {
     onAddedPerson?: () => void
@@ -39,12 +40,9 @@ const mapStateToProps = (state: IPersonsState) => {
     };
 };
 
-const mapDispatchToProps = (dispatch: IPersonDispatchType) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<IPersonsState, void, IPersonsAction>) => {
     return {
-        onRemovedPerson: (age: number) => dispatch({
-            type: REMOVE_PERSON,
-            age: age,
-        }),
+        onRemovedPerson: (age: number) => dispatch(removePerson(age)),
     };
 };
 

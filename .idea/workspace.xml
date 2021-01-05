@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="362c37fe-34c5-4a33-94e0-3329f4c143f6" name="Default Changelist" comment="" />
+    <list default="true" id="edf52f2e-741c-423b-abb6-da98cd0afe33" name="Default Changelist" comment="redux">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/burgerBuilder.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/order.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/order.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Burger/BuildControls/BuildControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Burger/BuildControls/BuildControls.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Input/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerBuilder/BurgerBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerBuilder/BurgerBuilder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/Checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/Checkout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/ContactData/ContactData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/ContactData/ContactData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/hoc/Layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/hoc/Layout/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/actionTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/burgerIngredientsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/burgerBuilder.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReduxBasics/components/AddPerson.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReduxBasics/components/AddPerson.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReduxBasics/containers/Persons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReduxBasics/containers/Persons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReduxBasics/store/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReduxBasics/store/actions/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReduxBasics/store/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReduxBasics/store/reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReduxBasics/store/type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReduxBasics/store/type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,17 +34,25 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1l5dgR0k6PIqT3TI1iaaJt6omyF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1mVwdkQUG4o1lLlQnmDesj8PPbn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,9 +60,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/React - The Complete Guide (incl Hooks, React Router, Redux)/14. Redux/24.1 redux--01-start/redux--01-start" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -56,35 +70,22 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
-    <property name="ts.external.directory.path" value="D:\repos\learning-react\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="G:\Repos\learning-react\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\Repos\learning-react\src\Blog" />
-      <recent name="G:\Repos\learning-react\src\BurgerBuilder\assets\images" />
-      <recent name="G:\Repos\learning-react\src\Persons" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\repos\learning-react\src\ReduxBasics\containers" />
-      <recent name="G:\Repos\learning-react\src\Blog\containers\Blog" />
-      <recent name="G:\Repos\learning-react\src\BurgerBuilder\hoc" />
-      <recent name="G:\Repos\learning-react\src\BurgerBuilder" />
-      <recent name="G:\Repos\learning-react\src\BurgerBuilder\components\Burger\BurgerIngredient" />
+      <recent name="G:\Repos\learning-react\src\BurgerBuilder\store\reducers" />
+      <recent name="G:\Repos\learning-react\src\BurgerBuilder\store\actions" />
+      <recent name="G:\Repos\learning-react\src\ReduxBasics\store\actions" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.npm start">
-    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
-      <method v="2" />
-    </configuration>
-    <configuration name="npm start" type="js.build_tools.npm">
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
+      <command value="start" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
@@ -93,47 +94,18 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="362c37fe-34c5-4a33-94e0-3329f4c143f6" name="Default Changelist" comment="" />
-      <created>1606890996790</created>
+      <changelist id="edf52f2e-741c-423b-abb6-da98cd0afe33" name="Default Changelist" comment="" />
+      <created>1609592156982</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606890996790</updated>
-      <workItem from="1606890998087" duration="1332000" />
-      <workItem from="1606972538015" duration="2475000" />
-      <workItem from="1606977654483" duration="1798000" />
-      <workItem from="1606979581194" duration="1841000" />
-      <workItem from="1606981509367" duration="3617000" />
-      <workItem from="1606993325960" duration="105000" />
-      <workItem from="1607062679214" duration="4645000" />
-      <workItem from="1607193094919" duration="64000" />
-      <workItem from="1607247823745" duration="3706000" />
-      <workItem from="1607323576102" duration="5136000" />
-      <workItem from="1607415313138" duration="5830000" />
-      <workItem from="1607489180067" duration="16978000" />
-      <workItem from="1607531327429" duration="430000" />
-      <workItem from="1607580261197" duration="2550000" />
-      <workItem from="1607667558819" duration="1916000" />
-      <workItem from="1607705314401" duration="973000" />
-      <workItem from="1607769989438" duration="6139000" />
-      <workItem from="1607869448345" duration="4207000" />
-      <workItem from="1607934178232" duration="11771000" />
-      <workItem from="1608007831268" duration="12988000" />
-      <workItem from="1608110281788" duration="591000" />
-      <workItem from="1608134805241" duration="1627000" />
-      <workItem from="1608143744424" duration="34000" />
-      <workItem from="1608210783214" duration="3623000" />
-      <workItem from="1608380143894" duration="6222000" />
-      <workItem from="1608713437847" duration="5378000" />
-      <workItem from="1608887277945" duration="498000" />
-      <workItem from="1608887853640" duration="320000" />
-      <workItem from="1608987129251" duration="7478000" />
-      <workItem from="1609069004048" duration="1657000" />
-      <workItem from="1609070824777" duration="2660000" />
-      <workItem from="1609078496311" duration="1119000" />
-      <workItem from="1609080621448" duration="72000" />
-      <workItem from="1609080739909" duration="1942000" />
-      <workItem from="1609083123506" duration="627000" />
-      <workItem from="1609158939232" duration="19333000" />
+      <updated>1609592156982</updated>
+      <workItem from="1609592158562" duration="758000" />
+      <workItem from="1609594012328" duration="237000" />
+      <workItem from="1609594274516" duration="396000" />
+      <workItem from="1609594691099" duration="389000" />
+      <workItem from="1609694688205" duration="488000" />
+      <workItem from="1609736949502" duration="4624000" />
+      <workItem from="1609824419299" duration="7504000" />
     </task>
     <servers />
   </component>
@@ -153,9 +125,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/.." />
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
+    <MESSAGE value="redux" />
+    <option name="LAST_COMMIT_MESSAGE" value="redux" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
