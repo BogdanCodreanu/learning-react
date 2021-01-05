@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
-import Order from "../../components/Order/Order";
 import instance from "../../axios-orders";
-import { IIngredients } from "../../components/Burger/Burger";
+import Order from "../../components/Order/Order";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
-
-interface IOrder {
-    id: number
-    customer: any,
-    ingredients: IIngredients,
-    price: number,
-    deliveryMethod: string
-}
+import { IOrderData } from "../Checkout/ContactData/ContactData";
 
 class Orders extends Component {
-    state: { orders: IOrder[], loading: boolean } = {
+    state: { orders: IOrderData[], loading: boolean } = {
         orders: [],
         loading: true,
     };
@@ -21,7 +13,7 @@ class Orders extends Component {
     async componentDidMount() {
 
         try {
-            const ordersData = await instance.get<IOrder[]>('/orders.json');
+            const ordersData = await instance.get<IOrderData[]>('/orders.json');
             console.log(ordersData);
             const fetchedOrders = [];
             for (let dataKey in ordersData.data) {

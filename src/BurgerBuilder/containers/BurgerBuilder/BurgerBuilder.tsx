@@ -9,10 +9,13 @@ import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 import Modal from "../../components/UI/Modal/Modal";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
-import { addIngredient, removeIngredient } from "../../store/actions";
-import { BurgerBuilderActionTypes } from "../../store/actions/actionTypes";
+import { addIngredient, purchaseInit, removeIngredient } from "../../store/actions";
+import {
+    BurgerBuilderActionTypes,
+    BurgerCombinedState, PurchaseBurgerActionTypes,
+} from "../../store/actions/actionTypes";
 import { initIngredients } from "../../store/actions/burgerBuilder";
-import { IBurgerIngredientsState } from "../../store/reducers/burgerBuilder";
+import { IBurgerIngredientsState } from "../../store/reducers/burgerBuilderReducer";
 
 
 interface IBurgerBuilderState {
@@ -27,6 +30,7 @@ interface IBurgerBuilderProps extends RouteComponentProps {
     onAddIngredient?: (ingredient: string) => void
     onRemoveIngredient?: (ingredient: string) => void
     onInitIngredients?: () => void
+    onInitPurchase?: () => void
 }
 
 
@@ -99,19 +103,20 @@ class BurgerBuilder extends Component<IBurgerBuilderProps> {
     }
 }
 
-const mapStateToProps = (state: IBurgerIngredientsState) => {
+const mapStateToProps = (state: BurgerCombinedState) => {
     return {
-        ingredients: state.ingredients,
-        price: state.totalPrice,
-        error: state.error,
+        ingredients: state.burgerBuilder.ingredients,
+        price: state.burgerBuilder.totalPrice,
+        error: state.burgerBuilder.error,
     };
 };
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<IBurgerIngredientsState, void, BurgerBuilderActionTypes>) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<IBurgerIngredientsState, void, BurgerBuilderActionTypes) => {
     return {
         onAddIngredient: (ingredient: string) => dispatch(addIngredient(ingredient)),
         onRemoveIngredient: (ingredient: string) => dispatch(removeIngredient(ingredient)),
         onInitIngredients: () => dispatch(initIngredients()),
+        onInitPurchase: () => dispatch(purchaseInit()),
     };
 };
 

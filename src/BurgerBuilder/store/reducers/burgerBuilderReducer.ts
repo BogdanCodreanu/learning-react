@@ -15,11 +15,7 @@ export interface IBurgerIngredientsState {
     error: boolean
 }
 
-interface IIngredientPrices {
-    [key: string]: number;
-}
-
-const INGREDIENT_PRICES: IIngredientPrices = {
+const INGREDIENT_PRICES: { [key: string]: number } = {
     salad: 0.5,
     cheese: 0.4,
     meat: 1.3,
@@ -32,7 +28,7 @@ const initialState: IBurgerIngredientsState = {
     error: false,
 };
 
-const burgerBuilder = (state = initialState, action: BurgerBuilderActionTypes) => {
+const burgerBuilderReducer = (state = initialState, action: BurgerBuilderActionTypes) => {
     switch (action.type) {
         case ADD_INGREDIENT:
             if (!action.ingredientName || !state.ingredients) {
@@ -73,6 +69,7 @@ const burgerBuilder = (state = initialState, action: BurgerBuilderActionTypes) =
                     cheese: action.ingredients.cheese,
                     meat: action.ingredients.meat,
                 },
+                totalPrice: 0,
                 error: false,
             };
         }
@@ -87,4 +84,4 @@ const burgerBuilder = (state = initialState, action: BurgerBuilderActionTypes) =
     }
 };
 
-export default burgerBuilder;
+export default burgerBuilderReducer;

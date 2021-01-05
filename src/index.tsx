@@ -2,9 +2,10 @@ import axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import burgerBuilderReducer from "./BurgerBuilder/store/reducers/burgerBuilder";
+import burgerBuilderReducer from "./BurgerBuilder/store/reducers/burgerBuilderReducer";
+import orderReducer from "./BurgerBuilder/store/reducers/orderReducer";
 import App from './containers/App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -28,9 +29,13 @@ axios.interceptors.response.use((request) => {
 const composeEnhancers = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose ||
                          compose;
 
+const rootBurgerReducer = combineReducers({
+    burgerBuilder: burgerBuilderReducer,
+    order: orderReducer,
+});
 
 // burger builder store
-const store = createStore(burgerBuilderReducer, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(rootBurgerReducer, composeEnhancers(applyMiddleware(thunk)));
 
 
 // const logger: Middleware<{}, IPersonsState> = store => next => action => {

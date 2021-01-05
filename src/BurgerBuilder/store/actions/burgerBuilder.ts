@@ -2,7 +2,7 @@ import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import axios from "../../axios-orders";
 import { IIngredients } from "../../components/Burger/Burger";
-import { IBurgerIngredientsState } from "../reducers/burgerBuilder";
+import { IBurgerIngredientsState } from "../reducers/burgerBuilderReducer";
 import {
     ADD_INGREDIENT,
     BurgerBuilderActionTypes,
@@ -43,7 +43,6 @@ export const initIngredients = (): ThunkAction<void, IBurgerIngredientsState, un
         try {
             const response = await axios.get(
                 'https://react-burger-learning-9391f-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json');
-            console.log('get ingredients response', response);
             dispatch(setIngredients(response.data));
         } catch (e) {
             dispatch(fetchIngredientsFailed());
