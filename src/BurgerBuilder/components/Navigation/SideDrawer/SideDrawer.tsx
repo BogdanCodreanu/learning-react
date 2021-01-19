@@ -1,13 +1,14 @@
 import React from 'react';
 import Logo from "../../Logo/Logo";
+import Backdrop from "../../UI/Backdrop/Backdrop";
 import NavigationItems from "../NavigationItems/NavigationItems";
 
 import classes from "./SideDrawer.module.css";
-import Backdrop from "../../UI/Backdrop/Backdrop";
 
 interface ISideDrawerProps {
     show: boolean;
     close: () => void;
+    isAuth: boolean;
 }
 
 const SideDrawer = (props: ISideDrawerProps) => {
@@ -19,12 +20,12 @@ const SideDrawer = (props: ISideDrawerProps) => {
     return (
         <>
             <Backdrop show={props.show} onClick={props.close} />
-            <div className={attachedClasses.join(' ')} >
+            <div className={attachedClasses.join(' ')} onClick={props.close}>
                 <div className={classes.Logo} >
                     <Logo />
                 </div >
                 <nav >
-                    <NavigationItems />
+                    <NavigationItems isAuthenticated={props.isAuth} />
                 </nav >
             </div >
         </>

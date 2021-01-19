@@ -23,18 +23,22 @@ interface IContactDataProps extends RouteComponentProps {
     loading: boolean
 }
 
-interface IInputElementType {
+export interface IValidation {
+    required: boolean
+    valid: boolean
+    isEmail?: boolean
+    minLength?: number
+    touched: boolean
+}
+
+export interface IInputElementType {
     elementType: string;
     elementConfig: any;
     value: string;
-    validation?: {
-        required: boolean
-        valid: boolean
-        touched: boolean
-    }
+    validation?: IValidation
 }
 
-interface IInputString extends IInputElementType {
+export interface IInputString extends IInputElementType {
     elementType: 'input';
     elementConfig: {
         type: string;
@@ -49,10 +53,10 @@ interface IInputSelectType extends IInputElementType {
     }
 }
 
-const TextElement = (placeholder: string): IInputString => {
+export const TextElement = (placeholder: string, type: string = 'text'): IInputString => {
     return {
         elementConfig: {
-            type: 'text',
+            type: type,
             placeholder: placeholder,
         },
         value: '',

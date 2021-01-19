@@ -12,10 +12,10 @@ import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import { addIngredient, purchaseInit, removeIngredient } from "../../store/actions";
 import {
     BurgerBuilderActionTypes,
-    BurgerCombinedState, PurchaseBurgerActionTypes,
+    BurgerCombinedState,
+    PurchaseBurgerActionTypes,
 } from "../../store/actions/actionTypes";
 import { initIngredients } from "../../store/actions/burgerBuilder";
-import { IBurgerIngredientsState } from "../../store/reducers/burgerBuilderReducer";
 
 
 interface IBurgerBuilderState {
@@ -26,6 +26,7 @@ interface IBurgerBuilderProps extends RouteComponentProps {
     ingredients: IIngredients | null,
     price?: number,
     error?: boolean;
+    isAuthenticated?: boolean
 
     onAddIngredient?: (ingredient: string) => void
     onRemoveIngredient?: (ingredient: string) => void
@@ -52,13 +53,17 @@ class BurgerBuilder extends Component<IBurgerBuilderProps> {
     };
 
     purchaseHandler = () => {
-        this.setState({ purchasing: true });
+        if (this.props.isAuthenticated) {
+            this.setState({ purchasing: true });
+        } else {
+            this.props.history.push('/auth');
+        }
     };
 
     purchaseCancelHandler = () => this.setState({ purchasing: false });
 
     purchaseContinueHandler = async () => {
-
+        this.props.onInitPurchase?.();
         this.props.history.push('/checkout');
     };
 
@@ -82,7 +87,8 @@ class BurgerBuilder extends Component<IBurgerBuilderProps> {
                                    disabled={disabledInfo}
                                    price={this.props.price ?? 0}
                                    purchasable={this.updatePurchaseState(this.props.ingredients)}
-                                   ordered={this.purchaseHandler} />
+                                   ordered={this.purchaseHandler}
+                                   isAuthenticated={this.props.isAuthenticated ?? false} />
                 </>);
 
             orderSummary = <OrderSummary ingredients={this.props.ingredients}
@@ -108,10 +114,11 @@ const mapStateToProps = (state: BurgerCombinedState) => {
         ingredients: state.burgerBuilder.ingredients,
         price: state.burgerBuilder.totalPrice,
         error: state.burgerBuilder.error,
+        isAuthenticated: state.auth.token !== null,
     };
 };
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<IBurgerIngredientsState, void, BurgerBuilderActionTypes) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<any, void, BurgerBuilderActionTypes | PurchaseBurgerActionTypes>) => {
     return {
         onAddIngredient: (ingredient: string) => dispatch(addIngredient(ingredient)),
         onRemoveIngredient: (ingredient: string) => dispatch(removeIngredient(ingredient)),

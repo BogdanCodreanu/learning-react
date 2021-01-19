@@ -2,19 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edf52f2e-741c-423b-abb6-da98cd0afe33" name="Default Changelist" comment="redux">
-      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/orderReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Auth/Auth.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Auth/Auth.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Auth/Logout/Logout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/authReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Burger/BuildControls/BuildControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Burger/BuildControls/BuildControls.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Input/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/NavigationItems/NavigationItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/NavigationItems/NavigationItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/SideDrawer/SideDrawer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/SideDrawer/SideDrawer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/Toolbar/Toolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/Toolbar/Toolbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Order/CheckoutSummary/CheckoutSummary.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Order/CheckoutSummary/CheckoutSummary.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/UI/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/UI/Button/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerApp.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerBuilder/BurgerBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerBuilder/BurgerBuilder.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/Checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/Checkout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/ContactData/ContactData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/ContactData/ContactData.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/Orders/Orders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Orders/Orders.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/hoc/Layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/hoc/Layout/Layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/actionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/actionTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/burgerBuilder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/burgerBuilder.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/order.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/burgerBuilder.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/burgerBuilderReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/order.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/burgerBuilderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/burgerBuilderReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/orderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/orderReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cockpit/Cockpit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cockpit/Cockpit.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +39,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -53,7 +69,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.last.introduce.type" value="CONST" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -62,7 +80,8 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="MissingInActions.Settings.Application" />
     <property name="ts.external.directory.path" value="G:\Repos\learning-react\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -96,7 +115,17 @@
       <workItem from="1609594691099" duration="389000" />
       <workItem from="1609694688205" duration="488000" />
       <workItem from="1609736949502" duration="4624000" />
-      <workItem from="1609824419299" duration="15511000" />
+      <workItem from="1609824419299" duration="15569000" />
+      <workItem from="1609909695608" duration="7044000" />
+      <workItem from="1610360876152" duration="6574000" />
+      <workItem from="1610379702776" duration="822000" />
+      <workItem from="1610428749621" duration="8263000" />
+      <workItem from="1610457668652" duration="877000" />
+      <workItem from="1610530722388" duration="654000" />
+      <workItem from="1610652572666" duration="24000" />
+      <workItem from="1610685229660" duration="2854000" />
+      <workItem from="1610997607628" duration="606000" />
+      <workItem from="1611032736450" duration="2642000" />
     </task>
     <task id="LOCAL-00001" summary="redux">
       <created>1609832216301</created>
@@ -105,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609832216301</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="redux">
+      <created>1609852966741</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609852966741</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

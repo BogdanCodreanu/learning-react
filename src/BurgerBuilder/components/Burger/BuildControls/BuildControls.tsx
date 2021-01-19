@@ -24,6 +24,7 @@ const controls = [
 
 interface IBuildControlsProps {
     price: number;
+    isAuthenticated: boolean
     ingredientAdded?: (arg0: string) => void;
     ingredientRemoved?: (arg0: string) => void;
     disabled: { [key: string]: boolean };
@@ -52,8 +53,7 @@ const BuildControls = (props: IBuildControlsProps) => {
             })}
             <button className={classes.OrderButton}
                     disabled={!props.purchasable}
-                    onClick={orderHandler} >ORDER
-                NOW
+                    onClick={orderHandler} >{props.isAuthenticated ? 'ORDER NOW' : 'SIGN UP TO ORDER'}
             </button >
         </div >
     );

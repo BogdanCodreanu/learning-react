@@ -5,7 +5,7 @@ interface IButtonProps {
     clicked?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     children?: JSX.Element[] | JSX.Element | string
     disabled?: boolean
-    btnType: string
+    btnType: 'Success' | 'Danger'
 }
 
 const Button = (props: IButtonProps) => {

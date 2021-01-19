@@ -3,12 +3,7 @@ import { connect } from "react-redux";
 import { Redirect, Route, RouteComponentProps } from "react-router";
 import { DEFAULT_INGREDIENTS, IIngredients } from "../../components/Burger/Burger";
 import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
-import { purchaseInit } from "../../store/actions";
-import {
-    BurgerCombinedState,
-    PurchaseBurgerActionTypes,
-} from "../../store/actions/actionTypes";
-import { IBurgerIngredientsState } from "../../store/reducers/burgerBuilderReducer";
+import { BurgerCombinedState } from "../../store/actions/actionTypes";
 import ContactData from "./ContactData/ContactData";
 
 interface ICheckoutProps extends RouteComponentProps {

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
+import authReducer from "./BurgerBuilder/store/reducers/authReducer";
 import burgerBuilderReducer from "./BurgerBuilder/store/reducers/burgerBuilderReducer";
 import orderReducer from "./BurgerBuilder/store/reducers/orderReducer";
 import App from './containers/App';
@@ -26,12 +27,16 @@ axios.interceptors.response.use((request) => {
 
 
 // @ts-ignore
-const composeEnhancers = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose ||
+let composeEnhancers = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose ||
                          compose;
+if (process.env.NODE_ENV === "development") {
+    composeEnhancers = compose;
+}
 
 const rootBurgerReducer = combineReducers({
     burgerBuilder: burgerBuilderReducer,
     order: orderReducer,
+    auth: authReducer,
 });
 
 // burger builder store

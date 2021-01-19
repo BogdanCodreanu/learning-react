@@ -8,7 +8,7 @@ const Cockpit = (props: ICockpitProps) => {
 
 
     const togglePersonsHandler = () => {
-        ;
+
     };
     return (
         <div>
