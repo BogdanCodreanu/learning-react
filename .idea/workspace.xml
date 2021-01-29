@@ -2,33 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edf52f2e-741c-423b-abb6-da98cd0afe33" name="Default Changelist" comment="redux">
-      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Auth/Auth.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Auth/Auth.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Auth/Logout/Logout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/authReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/sagas/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/sagas/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__tests__/NavigationItems.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Burger/BuildControls/BuildControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Burger/BuildControls/BuildControls.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Input/Input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/NavigationItems/NavigationItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/NavigationItems/NavigationItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/SideDrawer/SideDrawer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/SideDrawer/SideDrawer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/Toolbar/Toolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/Toolbar/Toolbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/Order/CheckoutSummary/CheckoutSummary.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/Order/CheckoutSummary/CheckoutSummary.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/components/UI/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/components/UI/Button/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerApp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerBuilder/BurgerBuilder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/BurgerBuilder/BurgerBuilder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/Checkout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/Checkout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/ContactData/ContactData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Checkout/ContactData/ContactData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/containers/Orders/Orders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/containers/Orders/Orders.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/hoc/Layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/hoc/Layout/Layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/actionTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/actionTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/order.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/order.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/burgerBuilderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/burgerBuilderReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/orderReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/reducers/orderReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cockpit/Cockpit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cockpit/Cockpit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/BurgerBuilder/store/actions/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -70,7 +54,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/animations--01-start/animations--01-start" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -78,6 +62,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -87,12 +72,33 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\Repos\learning-react\src\__tests__" />
       <recent name="G:\Repos\learning-react\src\BurgerBuilder\store\reducers" />
       <recent name="G:\Repos\learning-react\src\BurgerBuilder\store\actions" />
       <recent name="G:\Repos\learning-react\src\ReduxBasics\store\actions" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="NavigationItems.test.ts (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/NavigationItems.test.ts" />
+      <method v="2" />
+    </configuration>
+    <configuration name="NavigationItems.test.ts" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/src/BurgerBuilder/components/Navigation/NavigationItems/NavigationItems.test.ts" />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
@@ -100,6 +106,12 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.NavigationItems.test.ts" />
+        <item itemvalue="Jest.NavigationItems.test.ts (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -125,7 +137,16 @@
       <workItem from="1610652572666" duration="24000" />
       <workItem from="1610685229660" duration="2854000" />
       <workItem from="1610997607628" duration="606000" />
-      <workItem from="1611032736450" duration="2642000" />
+      <workItem from="1611032736450" duration="4113000" />
+      <workItem from="1611037981200" duration="3801000" />
+      <workItem from="1611132107546" duration="206000" />
+      <workItem from="1611210163533" duration="2213000" />
+      <workItem from="1611295705765" duration="771000" />
+      <workItem from="1611555924012" duration="1566000" />
+      <workItem from="1611744012390" duration="2012000" />
+      <workItem from="1611767042485" duration="26000" />
+      <workItem from="1611838413728" duration="93000" />
+      <workItem from="1611904384514" duration="1196000" />
     </task>
     <task id="LOCAL-00001" summary="redux">
       <created>1609832216301</created>
@@ -167,5 +188,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/learning_react$NavigationItems_test_ts.info" NAME="NavigationItems.test.ts Coverage Results" MODIFIED="1611039144660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="JestJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

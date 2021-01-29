@@ -7,9 +7,12 @@ import thunk from 'redux-thunk';
 import authReducer from "./BurgerBuilder/store/reducers/authReducer";
 import burgerBuilderReducer from "./BurgerBuilder/store/reducers/burgerBuilderReducer";
 import orderReducer from "./BurgerBuilder/store/reducers/orderReducer";
+import { watchAuth } from "./BurgerBuilder/store/sagas";
+import { logoutSaga } from "./BurgerBuilder/store/sagas/auth";
 import App from './containers/App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import createSagaMiddleware from 'redux-saga';
 
 axios.interceptors.request.use((request) => {
     return request;
@@ -28,8 +31,9 @@ axios.interceptors.response.use((request) => {
 
 // @ts-ignore
 let composeEnhancers = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose ||
-                         compose;
-if (process.env.NODE_ENV === "development") {
+                       compose;
+
+if (process.env.NODE_ENV !== "development") {
     composeEnhancers = compose;
 }
 
@@ -39,9 +43,14 @@ const rootBurgerReducer = combineReducers({
     auth: authReducer,
 });
 
-// burger builder store
-const store = createStore(rootBurgerReducer, composeEnhancers(applyMiddleware(thunk)));
+const sagaMiddleware = createSagaMiddleware();
 
+// burger builder store
+const store = createStore(
+    rootBurgerReducer,
+    composeEnhancers(applyMiddleware(thunk, sagaMiddleware)));
+
+sagaMiddleware.run(watchAuth);
 
 // const logger: Middleware<{}, IPersonsState> = store => next => action => {
 //     const result = next(action);

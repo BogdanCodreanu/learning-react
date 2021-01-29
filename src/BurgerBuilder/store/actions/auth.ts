@@ -3,7 +3,7 @@ import { ThunkAction } from "redux-thunk";
 import { IAuthData } from "../../containers/Auth/Auth";
 import {
     AUTH_FAIL,
-    AUTH_LOGOUT,
+    AUTH_INITIATE_LOGOUT,
     AUTH_START,
     AUTH_SUCCESS,
     AuthActionTypes,
@@ -30,9 +30,8 @@ const authFail = (error: string): AuthActionTypes => {
 };
 
 export const logOut = (): AuthActionTypes => {
-    localStorage.removeItem('token');
     return {
-        type: AUTH_LOGOUT,
+        type: AUTH_INITIATE_LOGOUT,
     };
 };
 
